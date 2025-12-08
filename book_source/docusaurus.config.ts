@@ -9,20 +9,18 @@ const config: Config = {
   tagline: 'Bridging the gap between the digital brain and the physical body',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
 
   // Set the production url of your site here
-  url: 'https://aidd-projects.github.io',
+  url: 'https://marjan-ahmed.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/humanoid-robotics-textbook/',
 
+  trailingSlash: true,
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'aidd-projects', // Usually your GitHub org/user name.
+  organizationName: 'marjan-ahmed', // Usually your GitHub org/user name.
   projectName: 'humanoid-robotics-textbook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -54,6 +52,22 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        // ... Your options.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to be 'zh'
+        language: ["en"],
+        // Optional: Index all our localized docs
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -82,6 +96,10 @@ const config: Config = {
           to: '/instructor-guide',
           label: 'For Instructors',
           position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
         {
           href: 'https://github.com/aidd-projects/humanoid-robotics-textbook',
@@ -140,6 +158,31 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap',
+      },
+    },
+  ],
 };
 
 export default config;

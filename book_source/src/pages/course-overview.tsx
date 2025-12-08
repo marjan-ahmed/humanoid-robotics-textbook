@@ -158,7 +158,7 @@ function ModuleDetails(): ReactNode {
               </Link>
               <Link
                 className="button button--secondary button--lg"
-                to="/docs/instructor-guide">
+                to="/instructor-guide">
                 Instructor Resources
               </Link>
             </div>
