@@ -1,0 +1,57 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Weekly schedule section */
+.weeklySchedule {
+  background-color: #f8f9fa;
+}
+
+html[data-theme='dark'] .weeklySchedule {
+  background-color: #0d1117;
+}
+
+.week-item {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+html[data-theme='dark'] .week-item {
+  background-color: #2d2e36;
+  border: 1px solid #444d5d;
+}
+
+.week-header {
+  border-bottom: 2px solid #25c2a0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.week-duration {
+  font-style: italic;
+  color: #6c757d;
+}
+
+.week-content {
+  padding-left: 15px;
+}
+
+.week-section {
+  margin-bottom: 20px;
+}
+
+.week-section h3 {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #25c2a0;
+}
+
+html[data-theme='dark'] .week-section h3 {
+  border-bottom: 1px solid #444d5d;
+}

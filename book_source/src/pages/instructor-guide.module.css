@@ -1,0 +1,57 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Instructor guide section */
+.instructorGuide {
+  background-color: #f8f9fa;
+}
+
+html[data-theme='dark'] .instructorGuide {
+  background-color: #0d1117;
+}
+
+.structure-card, .assessment-card, .resources-card, .schedule-card, .practices-card {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+html[data-theme='dark'] .structure-card,
+html[data-theme='dark'] .assessment-card,
+html[data-theme='dark'] .resources-card,
+html[data-theme='dark'] .schedule-card,
+html[data-theme='dark'] .practices-card {
+  background-color: #2d2e36;
+  border: 1px solid #444d5d;
+}
+
+.module-item, .assessment-type, .resource-category, .week-item {
+  background-color: #f8f9fa;
+  border-left: 4px solid #25c2a0;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+html[data-theme='dark'] .module-item,
+html[data-theme='dark'] .assessment-type,
+html[data-theme='dark'] .resource-category,
+html[data-theme='dark'] .week-item {
+  background-color: #2d2e36;
+}
+
+.week-item {
+  border-left: 4px solid #4285f4;
+}
+
+.assessment-type {
+  border-left: 4px solid #ea4335;
+}
+
+.resource-category {
+  border-left: 4px solid #34a853;
+}

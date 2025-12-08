@@ -1,0 +1,132 @@
+/* DocSidebar layout styles with collapsible functionality */
+.doc-sidebar-container {
+  position: relative;
+  width: var(--doc-sidebar-width, 300px);
+  height: 100%;
+  transition: width var(--ifm-transition-fast) ease;
+  border-right: 1px solid var(--ifm-toc-border-color);
+  background-color: var(--ifm-menu-background-color);
+}
+
+.doc-sidebar-container--collapsed {
+  width: var(--doc-sidebar-width-collapsed, 50px) !important;
+}
+
+.doc-sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: var(--ifm-color-emphasis-200);
+  transition: background-color var(--ifm-transition-fast) ease;
+}
+
+.doc-sidebar-toggle:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.toggle-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 16px;
+  height: 16px;
+}
+
+.toggle-icon span {
+  height: 2px;
+  width: 100%;
+  background: var(--ifm-color-emphasis-600);
+  transition: all var(--ifm-transition-fast) ease;
+  transform-origin: center;
+}
+
+.toggle-icon.collapsed span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggle-icon.collapsed span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-icon.collapsed span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.doc-sidebar-content {
+  height: 100%;
+  overflow: hidden;
+}
+
+.doc-sidebar-menu {
+  height: 100%;
+  width: 100%;
+  transition: transform var(--ifm-transition-fast) ease, opacity var(--ifm-transition-fast) ease;
+}
+
+.doc-sidebar-menu--collapsed {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.doc-sidebar-menu .menu__content {
+  height: 100%;
+  padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+  overflow-y: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 996px) {
+  .doc-sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    transform: translateX(0);
+    transition: transform var(--ifm-transition-fast) ease;
+  }
+
+  .doc-sidebar-container--collapsed {
+    transform: translateX(-100%);
+  }
+
+  .doc-sidebar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .doc-sidebar-menu--collapsed {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 997px) and (max-width: 1200px) {
+  :root {
+    --doc-sidebar-width: 280px;
+  }
+}
+
+/* Adjust main content when sidebar is collapsed */
+@media (min-width: 997px) {
+  .sidebar-compact .doc-item-wrapper,
+  .doc-sidebar-container--collapsed ~ .doc-item-wrapper {
+    max-width: calc(var(--ifm-container-width, 1600px) - var(--doc-sidebar-width-collapsed, 50px)) !important;
+    flex: 1;
+  }
+
+  .sidebar-compact .doc-item-wrapper--expand,
+  .doc-sidebar-container--collapsed ~ .doc-item-wrapper--expand {
+    max-width: calc(100% - var(--doc-sidebar-width-collapsed, 50px)) !important;
+  }
+}

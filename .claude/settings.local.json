@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p specs/1-book-frontend)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

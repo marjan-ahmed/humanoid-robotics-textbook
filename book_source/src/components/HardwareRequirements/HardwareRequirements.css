@@ -1,0 +1,123 @@
+/* Hardware requirements component styles */
+.hardware-requirements-container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .hardware-requirements-container {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.hardware-section {
+  margin-bottom: 2rem;
+}
+
+.hardware-section__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.hardware-card {
+  background-color: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--ifm-transition-fast) ease, box-shadow var(--ifm-transition-fast) ease;
+}
+
+html[data-theme='dark'] .hardware-card {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.hardware-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hardware-card__title {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: var(--ifm-heading-color);
+}
+
+.hardware-card__description {
+  margin: 0 0 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+html[data-theme='dark'] .hardware-card__description {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.hardware-card__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.hardware-card__spec {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.hardware-card__spec::before {
+  content: '•';
+  color: var(--ifm-color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.hardware-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.hardware-card__cost {
+  color: var(--ifm-color-success);
+}
+
+.hardware-card__difficulty {
+  color: var(--ifm-color-info);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hardware-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware-requirements-container {
+    padding: 1rem;
+  }
+
+  .hardware-card {
+    padding: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 996px) {
+  .hardware-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

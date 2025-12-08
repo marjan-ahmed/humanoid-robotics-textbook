@@ -1,0 +1,81 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Course overview section */
+.courseOverview {
+  background-color: #f8f9fa;
+}
+
+html[data-theme='dark'] .courseOverview {
+  background-color: #1a1a1a;
+}
+
+.whyPhysicalAI {
+  background-color: white;
+}
+
+html[data-theme='dark'] .whyPhysicalAI {
+  background-color: #0d1117;
+}
+
+/* Value proposition styling */
+.value-proposition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.value-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+html[data-theme='dark'] .value-card {
+  background-color: #3a3f44;
+  border: 1px solid #444;
+}
+
+.industry-trends {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+html[data-theme='dark'] .industry-trends {
+  background-color: #2d2d2d;
+}
+
+.trends-list {
+  text-align: left;
+  max-width: 600px;
+  margin: 15px auto 0;
+}

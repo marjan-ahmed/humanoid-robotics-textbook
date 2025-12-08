@@ -1,0 +1,47 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Course overview section */
+.moduleDetails {
+  background-color: #f8f9fa;
+}
+
+html[data-theme='dark'] .moduleDetails {
+  background-color: #0d1117;
+}
+
+.module-detail-card {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+html[data-theme='dark'] .module-detail-card {
+  background-color: #2d2e36;
+  border: 1px solid #444d5d;
+}
+
+.prerequisites-card, .hardware-card, .assessment-card, .resources-card {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+html[data-theme='dark'] .prerequisites-card,
+html[data-theme='dark'] .hardware-card,
+html[data-theme='dark'] .assessment-card,
+html[data-theme='dark'] .resources-card {
+  background-color: #2d2e36;
+  border: 1px solid #444d5d;
+}
+
+.module-section, .prerequisites-section, .hardware-section, .assessment-section, .resources-section {
+  max-width: 100%;
+}

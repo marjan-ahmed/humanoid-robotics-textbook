@@ -1,0 +1,87 @@
+/* Sidebar toggle button styles */
+.sidebar-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--ifm-transition-fast) ease;
+}
+
+.sidebar-toggle:hover {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.sidebar-toggle__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 16px;
+  height: 16px;
+}
+
+.sidebar-toggle__icon span {
+  height: 2px;
+  width: 100%;
+  background: var(--ifm-color-emphasis-600);
+  transition: all var(--ifm-transition-fast) ease;
+  transform-origin: center;
+}
+
+/* Collapsed sidebar styles */
+body.sidebar-collapsed .sidebar {
+  width: var(--doc-sidebar-width-collapsed, 80px) !important;
+  overflow: hidden;
+}
+
+body.sidebar-collapsed .sidebar .menu {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform var(--ifm-transition-fast) ease, opacity var(--ifm-transition-fast) ease;
+}
+
+body.sidebar-collapsed .sidebar:hover,
+body.sidebar-collapsed .sidebar:focus-within {
+  width: var(--doc-sidebar-width, 300px) !important;
+}
+
+body.sidebar-collapsed .sidebar:hover .menu,
+body.sidebar-collapsed .sidebar:focus-within .menu {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Adjust main content when sidebar is collapsed */
+body.sidebar-collapsed .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  flex-basis: calc(100% - var(--doc-sidebar-width-collapsed, 80px));
+}
+
+/* Adjust main content container */
+body.sidebar-collapsed .docItemContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  max-width: calc(var(--ifm-container-width, 1400px) - var(--doc-sidebar-width-collapsed, 80px));
+}
+
+/* Mobile responsiveness */
+@media (max-width: 996px) {
+  .sidebar-toggle {
+    display: none;
+  }
+
+  /* On mobile, always show full sidebar */
+  body.sidebar-collapsed .sidebar {
+    width: var(--doc-sidebar-width, 300px) !important;
+  }
+
+  body.sidebar-collapsed .sidebar .menu {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

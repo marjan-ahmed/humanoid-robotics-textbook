@@ -1,0 +1,103 @@
+/* Learning outcomes component styles */
+.learning-outcomes-container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lightest) 0%, var(--ifm-color-emphasis-100) 100%);
+}
+
+html[data-theme='dark'] .learning-outcomes-container {
+  background: linear-gradient(135deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-emphasis-200) 100%);
+}
+
+.learning-outcomes__title {
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+  color: var(--ifm-color-primary);
+}
+
+.learning-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.outcome-card {
+  background-color: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform var(--ifm-transition-fast) ease, box-shadow var(--ifm-transition-fast) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.outcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+}
+
+html[data-theme='dark'] .outcome-card {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.outcome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.outcome-card__icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.outcome-card__title {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.outcome-card__description {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  line-height: 1.6;
+}
+
+html[data-theme='dark'] .outcome-card__description {
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .learning-outcomes-container {
+    padding: 1rem;
+  }
+
+  .learning-outcomes__title {
+    font-size: 1.5rem;
+  }
+
+  .learning-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outcome-card {
+    padding: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 996px) {
+  .learning-outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

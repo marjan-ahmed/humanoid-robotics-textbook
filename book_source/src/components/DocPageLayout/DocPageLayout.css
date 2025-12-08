@@ -1,0 +1,28 @@
+/* Custom layout for documentation pages */
+.doc-page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.doc-page-layout__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Enhanced responsive styles for better mobile experience */
+@media (max-width: 768px) {
+  .doc-page-layout {
+    padding-top: 0;
+  }
+
+  .doc-page-layout__content {
+    padding: 0 1rem;
+  }
+}
+
+/* Adjust for sidebar collapse */
+body.sidebar-collapsed .doc-page-layout__content {
+  width: calc(100% - var(--doc-sidebar-width-collapsed, 80px));
+}
