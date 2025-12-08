@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -16,7 +16,7 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/humanoid-robotics-textbook/',
 
-  trailingSlash: true,
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -56,11 +56,8 @@ const config: Config = {
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
-        // ... Your options.
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to be 'zh'
         language: ["en"],
-        // Optional: Index all our localized docs
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
@@ -76,10 +73,6 @@ const config: Config = {
     },
     navbar: {
       title: 'Physical AI & Humanoid Robotics',
-      logo: {
-        alt: 'Physical AI & Humanoid Robotics Logo',
-        src: 'img/logo.svg',
-      },
       items: [
         {
           type: 'docSidebar',
@@ -102,8 +95,13 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/aidd-projects/humanoid-robotics-textbook',
+          href: 'https://github.com/marjan-ahmed/humanoid-robotics-textbook',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://marjanahmed.vercel.app',
+          label: 'Author',
           position: 'right',
         },
       ],
@@ -146,7 +144,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/aidd-projects/humanoid-robotics-textbook',
+              href: 'https://github.com/marjan-ahmed/humanoid-robotics-textbook',
             },
           ],
         },

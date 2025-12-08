@@ -3,44 +3,31 @@
  * and scoped locally.
  */
 
-/* Black and white theme with Inter and Montserrat fonts */
-:root {
-  --black: #000000;
-  --dark-gray: #222222;
-  --medium-gray: #444444;
-  --light-gray: #f5f5f5;
-  --white: #ffffff;
-  --transition: all 0.3s ease;
-}
-
-html[data-theme='dark'] {
-  --black: #ffffff;
-  --dark-gray: #f5f5f5;
-  --medium-gray: #cccccc;
-  --light-gray: #222222;
-  --white: #000000;
-}
-
 /* Apply Inter font to text elements */
-.heroSection, .chapterSection, .courseOverviewSection, .outcomesSection, .industrySection {
+.heroSection,
+.chapterSection,
+.courseOverviewSection,
+.courseOverview,
+.outcomesSection,
+.industrySection,
+.whyPhysicalAI {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Apply Montserrat font to headings */
-.mainHeading, .sectionTitle, .featureTitle, .chapterTitle, .heroSubtitle {
+.mainHeading,
+.sectionTitle,
+.featureTitle,
+.chapterTitle,
+.heroSubtitle {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Hero Section */
 .heroSection {
   padding: 4rem 0;
-  background-color: var(--white);
-  color: var(--black);
-}
-
-html[data-theme='dark'] .heroSection {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 .heroGrid {
@@ -71,73 +58,59 @@ html[data-theme='dark'] .heroSection {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
-  color: var(--black);
-}
-
-html[data-theme='dark'] .mainHeading {
-  color: var(--white);
+  color: var(--ifm-font-color-base);
 }
 
 .heroSubtitle {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
-  color: var(--medium-gray);
-}
-
-html[data-theme='dark'] .heroSubtitle {
-  color: var(--medium-gray);
+  color: var(--ifm-color-emphasis-700);
 }
 
 .heroDescription {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  color: var(--medium-gray);
-}
-
-html[data-theme='dark'] .heroDescription {
-  color: var(--medium-gray);
+  color: var(--ifm-color-emphasis-700);
 }
 
 .startButton {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background-color: var(--black);
-  color: var(--white) !important;
+  background-color: var(--ifm-color-emphasis-900);
+  color: var(--ifm-color-white) !important;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
-  transition: var(--transition);
-  border: 2px solid var(--black);
+  transition: all 0.3s ease;
+  border: 2px solid var(--ifm-color-emphasis-900);
   max-width: fit-content;
 }
 
 html[data-theme='dark'] .startButton {
-  background-color: var(--white);
-  color: var(--black) !important;
+  background-color: var(--ifm-color-white);
+  color: var(--ifm-color-emphasis-900) !important;
+  border-color: var(--ifm-color-white);
 }
 
 .startButton:hover {
   background-color: transparent;
-  color: var(--black) !important;
+  color: var(--ifm-color-emphasis-900) !important;
   transform: translateY(-2px);
 }
 
 html[data-theme='dark'] .startButton:hover {
   background-color: transparent;
-  color: var(--white) !important;
+  color: var(--ifm-color-white) !important;
+  border-color: var(--ifm-color-white);
 }
 
 .heroVisual {
   height: 400px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-html[data-theme='dark'] .heroVisual {
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px var(--ifm-color-emphasis-200);
 }
 
 .splineContainer {
@@ -150,21 +123,13 @@ html[data-theme='dark'] .heroVisual {
   width: 100%;
   height: 100%;
   border: none;
-  background: var(--light-gray);
-}
-
-html[data-theme='dark'] .splineContainer iframe {
-  background: var(--dark-gray);
+  background: var(--ifm-color-emphasis-100);
 }
 
 /* Chapter Cards Section */
 .chapterSection {
   padding: 4rem 0;
-  background-color: var(--light-gray);
-}
-
-html[data-theme='dark'] .chapterSection {
-  background-color: var(--dark-gray);
+  background-color: var(--ifm-color-emphasis-100);
 }
 
 .chapterGrid {
@@ -175,30 +140,20 @@ html[data-theme='dark'] .chapterSection {
 }
 
 .chapterCard {
-  background-color: var(--white);
-  border: 1px solid var(--medium-gray);
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   padding: 2rem;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-html[data-theme='dark'] .chapterCard {
-  background-color: var(--black);
-  border: 1px solid var(--medium-gray);
-}
-
 .chapterCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--black);
-}
-
-html[data-theme='dark'] .chapterCard:hover {
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-  border-color: var(--white);
+  box-shadow: 0 10px 25px var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-primary);
 }
 
 .chapterContent {
@@ -211,58 +166,43 @@ html[data-theme='dark'] .chapterCard:hover {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
-  color: var(--black);
-}
-
-html[data-theme='dark'] .chapterTitle {
-  color: var(--white);
+  color: var(--ifm-font-color-base);
 }
 
 .chapterDescription {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0 0 auto 0;
-  color: var(--medium-gray);
+  color: var(--ifm-color-emphasis-700);
   flex-grow: 1;
-}
-
-html[data-theme='dark'] .chapterDescription {
-  color: var(--medium-gray);
 }
 
 .chapterDuration {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--medium-gray);
+  color: var(--ifm-color-emphasis-700);
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--light-gray);
-}
-
-html[data-theme='dark'] .chapterDuration {
-  border-top: 1px solid var(--dark-gray);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
 /* Course Overview Section */
 .courseOverviewSection {
   padding: 4rem 0;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
-html[data-theme='dark'] .courseOverviewSection {
-  background-color: var(--black);
-  color: var(--white);
+.courseOverview {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 /* Learning Outcomes Section */
 .outcomesSection {
   padding: 4rem 0;
-  background-color: var(--light-gray);
-}
-
-html[data-theme='dark'] .outcomesSection {
-  background-color: var(--dark-gray);
+  background-color: var(--ifm-color-emphasis-100);
 }
 
 .sectionContent {
@@ -275,11 +215,7 @@ html[data-theme='dark'] .outcomesSection {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--black);
-}
-
-html[data-theme='dark'] .sectionTitle {
-  color: var(--white);
+  color: var(--ifm-font-color-base);
 }
 
 .courseGrid {
@@ -289,26 +225,17 @@ html[data-theme='dark'] .sectionTitle {
 }
 
 .courseFeature {
-  background-color: var(--light-gray);
+  background-color: var(--ifm-background-color);
   padding: 2rem;
   border-radius: 8px;
-  border: 1px solid var(--medium-gray);
-}
-
-html[data-theme='dark'] .courseFeature {
-  background-color: var(--dark-gray);
-  border: 1px solid var(--medium-gray);
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .featureTitle {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
-  color: var(--black);
-}
-
-html[data-theme='dark'] .featureTitle {
-  color: var(--white);
+  color: var(--ifm-font-color-base);
 }
 
 .outcomesGrid {
@@ -321,54 +248,62 @@ html[data-theme='dark'] .featureTitle {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background-color: var(--white);
+  background-color: var(--ifm-background-color);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid var(--medium-gray);
-}
-
-html[data-theme='dark'] .outcomeItem {
-  background-color: var(--black);
-  border: 1px solid var(--medium-gray);
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .outcomeIcon {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--black);
+  color: var(--ifm-font-color-base);
   min-width: 24px;
-}
-
-html[data-theme='dark'] .outcomeIcon {
-  color: var(--white);
 }
 
 .outcomeText {
   margin: 0;
-  color: var(--medium-gray);
+  color: var(--ifm-color-emphasis-700);
   font-size: 1rem;
-}
-
-html[data-theme='dark'] .outcomeText {
-  color: var(--medium-gray);
 }
 
 /* Industry Relevance Section */
 .industrySection {
   padding: 4rem 0;
-  background-color: var(--white);
-  color: var(--black);
-}
-
-html[data-theme='dark'] .industrySection {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 .industryGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 3rem;
+}
+
+/* Why Physical AI Section */
+.whyPhysicalAI {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+/* Hero Banner */
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 /* Responsive adjustments */
@@ -407,5 +342,8 @@ html[data-theme='dark'] .industrySection {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
 
+  .buttons {
+    flex-direction: column;
+  }
+}
