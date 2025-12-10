@@ -33,18 +33,30 @@
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap to bring columns closer together */
   align-items: center;
+  max-width: 1200px; /* Reduced max-width for more compact layout */
+  margin: 0 auto; /* Center the grid */
+  padding: 0 1rem; /* Add some padding on sides */
 }
 
 @media screen and (max-width: 996px) {
   .heroGrid {
     grid-template-columns: 1fr;
     text-align: center;
+    max-width: 600px; /* Keep it compact on mobile too */
+    gap: 1.5rem; /* Adjust gap for mobile */
   }
 
   .heroSection {
     padding: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroGrid {
+    max-width: 100%;
+    padding: 0 1rem;
   }
 }
 

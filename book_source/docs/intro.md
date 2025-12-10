@@ -26,7 +26,7 @@ Begin your journey by exploring the course modules through the navigation sideba
 
 ## Hardware Requirements
 
-To fully engage with this course, you'll need access to robotic hardware or simulation environments. See our [Hardware Requirements](#hardware-requirements) section for detailed recommendations.
+To fully engage with this course, you'll need access to robotic hardware or simulation environments. See our [Hardware Requirements](./#hardware-requirements) section for detailed recommendations.
 
 ## Prerequisites
 
