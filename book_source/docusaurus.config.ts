@@ -69,7 +69,7 @@ const config: Config = {
 
   customFields: {
     chatKitApiUrl: process.env.REACT_APP_API_BASE_URL || 'https://humanoid-robotics-backend.onrender.com/chatkit',
-    chatKitDomainKey: process.env.CHATKIT_DOMAIN_KEY || 'marjan-ahmed.github.io',
+    chatKitDomainKey: process.env.CHATKIT_DOMAIN_KEY || 'domain_pk_69481bdd7a808195b616c240e60564290ee817960c22e564',
   },
 
   themeConfig: {
