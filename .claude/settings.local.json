@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir -p specs/1-book-frontend)"
+      "Bash(mkdir -p specs/1-book-frontend)",
+      "Bash(tasklist /fi \"imagename eq python.exe\" /fo csv)",
+      "Bash(findstr python.exe)"
     ],
     "deny": [],
     "ask": []
