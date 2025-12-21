@@ -1,0 +1,7 @@
+cohere>=4.0
+qdrant-client>=1.9
+pydantic>=2.0
+python-dotenv>=1.0
+pytest>=7.0
+openai-agents>=0.1
+openai>=1.0

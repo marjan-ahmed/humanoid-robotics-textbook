@@ -10,6 +10,8 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
 
+
+
   // Set the production url of your site here
   url: 'https://marjan-ahmed.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -64,6 +66,11 @@ const config: Config = {
       },
     ],
   ],
+
+  customFields: {
+    chatKitApiUrl: process.env.REACT_APP_API_BASE_URL || 'https://humanoid-robotics-backend.onrender.com/chatkit',
+    chatKitDomainKey: process.env.CHATKIT_DOMAIN_KEY || 'domain_pk_69481bdd7a808195b616c240e60564290ee817960c22e564',
+  },
 
   themeConfig: {
     // Replace with your project's social card
