@@ -1,5 +1,6 @@
 import { ChatKit, useChatKit } from '@openai/chatkit-react';
 import { useState, useEffect } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 interface ChatPopupProps {
   isVisible: boolean;
@@ -17,10 +18,16 @@ function ChatPopup({ isVisible, onClose }: ChatPopupProps) {
     setIsReady(true);
   }, []);
 
+  const { siteConfig } = useDocusaurusContext();
+  const { chatKitApiUrl, chatKitDomainKey } = siteConfig.customFields as {
+    chatKitApiUrl: string;
+    chatKitDomainKey: string;
+  };
+
   const { control } = useChatKit({
     api: {
-      url: 'http://127.0.0.1:8001/chatkit',
-      domainKey: 'localhost',
+      url: chatKitApiUrl,
+      domainKey: chatKitDomainKey,
     },
     initialThread: initialThread || undefined,
     onThreadChange: ({ threadId }) => {
@@ -37,7 +44,7 @@ function ChatPopup({ isVisible, onClose }: ChatPopupProps) {
     },
   });
 
-  if (!isReady || !initialThread) return null;
+  if (!isReady || !isVisible) return null;
 
   return (
     <div

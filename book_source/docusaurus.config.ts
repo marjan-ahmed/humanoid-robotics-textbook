@@ -67,6 +67,11 @@ const config: Config = {
     ],
   ],
 
+  customFields: {
+    chatKitApiUrl: process.env.REACT_APP_API_BASE_URL || 'https://humanoid-robotics-backend.onrender.com/chatkit',
+    chatKitDomainKey: process.env.CHATKIT_DOMAIN_KEY || 'marjan-ahmed.github.io',
+  },
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
