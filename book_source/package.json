@@ -8,7 +8,7 @@
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b gh-pages -e 002-chatbot-ui",
+    "deploy": "gh-pages -d build -b gh-pages",
     "deploy:dry-run": "cross-env DEBUG=gh-pages gh-pages -d build -b gh-pages -e 002-chatbot-ui --no-push",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
