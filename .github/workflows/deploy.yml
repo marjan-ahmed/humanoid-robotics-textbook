@@ -2,7 +2,7 @@ name: Deploy Docusaurus to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, 002-chatbot-ui]
 
 permissions:
   contents: write
@@ -17,14 +17,14 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: cd book_source && npm install
 
       - name: Build
-        run: npm run build
+        run: cd book_source && npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./book_source/build
           publish_branch: gh-pages
